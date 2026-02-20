@@ -1,0 +1,28 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package pp.leapmonth;
+
+/**
+ *
+ * @author DELL
+ */
+import java.util.Scanner;
+
+public class Leapmonth {
+
+    public static void main(String[] args) {
+    Scanner input = new Scanner(System.in); System.out.print("Enter year: "); int year = input.nextInt();
+    // Leap month logic 
+    boolean isLeapmonth = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    if (isLeapmonth) {
+        System.out.println(year + " is a Leap Month.");
+    } 
+    else {
+        System.out.println(year + " is NOT a Leap Month.");
+    } input.close();
+    }
+}    
+    
+
