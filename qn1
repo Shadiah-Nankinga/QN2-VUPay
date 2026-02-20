@@ -1,0 +1,78 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package ns.vupayy;
+
+import java.util.Scanner;
+/**
+ *
+ * @author DELL
+ */
+public class VUPayy {
+   static class VUCourses{
+    private String moduleName;
+    private String moduleCode;
+    private double tuition;
+
+    // Constructor
+    public VUCourses(String moduleName, String moduleCode, double tuition) {
+        this.moduleName = moduleName;
+        this.moduleCode = moduleCode;
+        this.tuition = tuition;
+    }
+
+    // Getter methods
+    public String getModuleName() {
+        return moduleName;
+    }
+    public String getModuleCode() {
+        return moduleCode;
+    }
+
+    public double getTuition() {
+        return tuition;
+    }
+    // Method to display course details
+    public void displayCourseDetails() {
+        System.out.println("Course: " + moduleName);
+        System.out.println("Module Code: " + moduleCode);
+        System.out.println("Tuition: " + tuition);
+    }
+}
+// File: VUPay.java
+
+    
+   
+
+    public static void main(String[] args) {
+                // Create course objects (subclass instances)
+        VUCourses course1 = new VUCourses("BSc. Software Engineering", "BSF", 900000);
+        VUCourses course2 = new VUCourses("BSc. Information Technology", "BIT", 750000);
+        VUCourses course3 = new VUCourses("BSc. Computer Science", "BCS", 800000);
+        VUCourses course4 = new VUCourses("BSc. Computer Engineering", "BCE", 950000);
+
+        // Prompt user for input
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter Module Code: ");
+        String inputCode = scanner.nextLine().toUpperCase();
+
+        // Compare input with available courses
+        if (inputCode.equals(course1.getModuleCode())) {
+            course1.displayCourseDetails();
+        } else if (inputCode.equals(course2.getModuleCode())) {
+            course2.displayCourseDetails();
+        } else if (inputCode.equals(course3.getModuleCode())) {
+            course3.displayCourseDetails();
+        } else if (inputCode.equals(course4.getModuleCode())) {
+            course4.displayCourseDetails();
+        } else {
+            System.out.println("Wrong Module Code details");
+        }
+
+        scanner.close();
+    }
+
+}
+    
+
